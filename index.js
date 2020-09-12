@@ -63,6 +63,13 @@ const STORE = {
     score: 0
 };
 
+function renderTitle() {
+    return `
+    <header>
+        <h1>Houston Rockets Quiz</h1>
+    </header>`;
+}
+
 function renderStartScreen() {
     return `
         <div class="start-screen">
@@ -144,11 +151,11 @@ function renderFeedback(answerStatus) {
     let html = '';
     if (answerStatus === 'correct') {
         html = `
-            <div class="right-answer">That is correct!</div>`;
+            <div class="right-answer">Correct!</div>`;
     }
     else if (answerStatus === 'incorrect') {
         html = `
-            <div class="wrong-answer">That is incorrect. The correct answer is ${correctAnswer}.</div>`;
+            <div class="wrong-answer">Incorrect. The correct answer is ${correctAnswer}.</div>`;
     }
     return html;
 }
@@ -221,6 +228,7 @@ function renderRestartButton() {
 
 function handleQuizApp() {
     render();
+    renderTitle();
     renderStartClick();
     renderNextQuestionClick();
     renderQuestionFormSubmit();
