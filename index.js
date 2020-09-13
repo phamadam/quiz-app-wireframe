@@ -64,15 +64,14 @@ const STORE = {
 };
 
 function renderTitle() {
-    return `
-    <header>
-        <h1>Houston Rockets Quiz</h1>
-    </header>`;
+    $("h1").html(function() {
+        return 'Houston Rockets Quiz';
+    });
 }
 
 function renderStartScreen() {
     return `
-        <div class="start-screen">
+        <div class='start-screen'>
         <p>How well do you know the Houston Rockets?</p>
         <button type="button" id="start">Start Quiz</button>
         </div>`;
@@ -80,11 +79,11 @@ function renderStartScreen() {
 
 function renderQuestionAndScore() {
     return `
-    <ul class="question-and-score">
-        <li id="question-number">
+    <ul class='question-and-score'>
+        <li id='question-number'>
             Question Number: ${STORE.currentQuestion + 1}/${STORE.questions.length}
         </li>
-        <li id="question-and-score">
+        <li id='question-and-score'>
             Score: ${STORE.score}/${STORE.questions.length}
         </li>
     </ul>`;
@@ -120,7 +119,7 @@ function renderQuestion(question) {
             </div>
             </div>
             <button type="submit" id="submit-answer-btn" tabindex="5">Submit</button>
-            <button type="button" id="next-question-btn" tabindex="6"> Next &gt;></button>
+            <button type="button" id="next-question-btn" tabindex="6">Next</button>
         </fieldset>
         </form >`;
 }
@@ -234,5 +233,5 @@ function handleQuizApp() {
     renderQuestionFormSubmit();
     renderRestartButton();
 }
-  
+
 $(handleQuizApp);
